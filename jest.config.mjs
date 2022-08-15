@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',
     '!<rootDir>/src/main/**',
@@ -18,6 +18,5 @@ module.exports = {
   transform: {
     '\\.ts$': 'ts-jest'
   },
-  clearMocks: true,
-  setupFiles: ['dotenv/config']
+  clearMocks: true
 }
