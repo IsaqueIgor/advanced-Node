@@ -10,7 +10,12 @@
     "build": "npm run clean && tsc -p tsconfig-build.json",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest"
+    "check": "npm-check -s -u",
+    "test": "jest --passWithNoTests --no-cache --runInBand",
+    "test:watch": "npm test -- --watch",
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:coverage": "npm test -- --coverage",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
