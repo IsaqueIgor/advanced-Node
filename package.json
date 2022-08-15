@@ -8,6 +8,8 @@
     "start": "node dist/main/api",
     "clean": "rimraf dist",
     "build": "npm run clean && tsc -p tsconfig-build.json",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +26,7 @@
   "homepage": "https://github.com/IsaqueIgor/advanced-Node#readme",
   "devDependencies": {
     "@types/jest": "^28.1.6",
+    "@types/module-alias": "^2.0.1",
     "@types/node": "^18.7.4",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "eslint": "^8.22.0",
@@ -44,6 +47,7 @@
     "node": "16.x"
   },
   "dependencies": {
+    "module-alias": "^2.2.2",
     "rimraf": "^3.0.2"
   }
 }
