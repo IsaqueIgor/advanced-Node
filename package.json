@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/IsaqueIgor/advanced-Node/issues"
   },
-  "homepage": "https://github.com/IsaqueIgor/advanced-Node#readme"
+  "homepage": "https://github.com/IsaqueIgor/advanced-Node#readme",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
 }
