@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { HttpGetClient } from '@/infra/http'
 
 import axios from 'axios'
@@ -11,22 +12,27 @@ class AxiosHttpClient {
 }
 
 describe('AxiosHttpClient', () => {
+  let sut: AxiosHttpClient
+  let fakeAxios: jest.Mocked<typeof axios>
+  let url: string
+  let params: object
+
+  beforeAll(() => {
+    url = 'any_url'
+    params = { any: 'any' }
+    fakeAxios = axios as jest.Mocked<typeof axios>
+  })
+
+  beforeEach(() => {
+    sut = new AxiosHttpClient()
+  })
+
   describe('get', () => {
     it('should call get with correct params', async () => {
-      const fakeAxios = axios as jest.Mocked<typeof axios>
-      const sut = new AxiosHttpClient()
-
-      await sut.get({
-        url: 'any_url',
-        params: {
-          any: 'any'
-        }
-      })
+      await sut.get({ url, params })
 
       expect(fakeAxios.get).toHaveBeenCalledWith('any_url', {
-        params: {
-          any: 'any'
-        }
+        params
       })
       expect(fakeAxios.get).toHaveBeenCalledTimes(1)
     })
